@@ -226,7 +226,7 @@ def build_request_body_parameters_schema(body_params):
     description = '{\n'
     for param in body_params:
         properties[param["name"]] = {"type": param.get("type", "string")}
-        description += '&nbsp;' * 4 + f'<b>{param["name"]}</b>: {param.get("description", "")} <i>({param.get("type", "string")})</i>'
+        description += '&nbsp;' * 4 + f'<b>{param["name"]}</b>: {param.get("description", "")} <i>({param.get("type", "string")})</i>,\n'
 
     return {
         "name": "payload",
